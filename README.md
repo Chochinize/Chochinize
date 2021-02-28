@@ -1,6 +1,6 @@
-<style>
+```<style>
 .a{
   color:red;
   }
-</style>
+</style>```
 <p class="a">RED</p>
