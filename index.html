@@ -20,10 +20,9 @@
       font-weight: 500;
     }
     
-    .temp{
-      padding: 250px;
-      width: 90%;
-      /* position: absolute; */
+    .temp {
+      position: relative;
+      width: 1000px;
     }
     .temp h1 {
       display: flex;
@@ -38,8 +37,8 @@
     <h1>Arduino live temperature data</h1>
     <div id="chart"></div>
   </div>
-  <!-- <button id="genNew">Generate New Random Color</button> -->
-    <div id="genNew"></div>
+  
+    <!-- <div id="genNew"></div> -->
   <script>
     const uuid = PubNub.generateUUID();
     const __eon_pubnub = new PubNub({
@@ -72,7 +71,7 @@ chart = eon.chart({
   generate: {
     bindto: "#chart",
     data: {
-      colors: {'Temperature': "red"},
+      colors: {'Temperature C°': "red"},
       type: "line"
     },
     transition: {
@@ -88,7 +87,7 @@ chart = eon.chart({
       },
       y: {
         label: {
-          text: 'CELSI',
+          text: 'VALUE',
           position: 'outer-middle'
         },
         
@@ -113,9 +112,9 @@ chart = eon.chart({
 transform: function(m) {
   return { eon: {
       
-      Temperature: m.temperature,
-      Fahrenheit: m.fahrenheit,
-      Kelvin: m.kelvin
+      'Temperature C°': m.temperature,
+      'Fahrenheit F': m.fahrenheit,
+      'Kelvin K': m.kelvin
       // temperature: m.temperature
     }}
   }
