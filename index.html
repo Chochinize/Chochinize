@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Publish Subscribe Tutorial</title>
+  <script src="/node_modules/pubnub/dist/web/pubnub.js"></script>
+  <script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css" />
+  <style type="text/css">
+  
+    * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    body {
+        font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Roboto Light', 'Segoe UI Web Light', 'Segoe UI Light', 'Segoe UI Web Regular', 'Segoe UI', Helvetica, Arial, sans-serif; 
+        margin: 1em;
+    }
+    header {
+      margin-bottom: 100px;
+    }
+    h1 {
+      font-weight: 500;
+    }
+    
+    .temp{
+      padding: 250px;
+      width: 90%;
+      /* position: absolute; */
+    }
+    .temp h1 {
+      display: flex;
+    }
+    #chart .c3-line-type {
+  stroke-width: 15px;
+}
+    </style>
+</head>
+<body>
+  <div class="temp">
+    <h1>Arduino live temperature data</h1>
+    <div id="chart"></div>
+  </div>
+  <!-- <button id="genNew">Generate New Random Color</button> -->
+    <div id="genNew"></div>
+  <script>
+    const uuid = PubNub.generateUUID();
+    const __eon_pubnub = new PubNub({
+      publishKey: "pub-c-7c1a81c7-7932-4113-a3c1-9696b9100aa9",
+      subscribeKey: "sub-c-a5ed9cb0-8494-11eb-99bb-ce4b510ebf19",
+      uuid: uuid
+    });
+    var channel = "pubnub_onboarding_channel";
+
+    
+
+
+//     __eon_pubnub.addListener({
+//   message: function(message) {
+//     console.log(message);
+//   },
+//   presence: function(presenceEvent) {
+//     console.log(presenceEvent);
+//   }
+// })
+var __eon_cols = ["Austin","New York","San Francisco","Portland"]; 
+var __eon_labels = {}; 
+chart = eon.chart({
+  pubnub: __eon_pubnub,
+  channels: ["pubnub_onboarding_channel"],
+  history: false,
+  flow: true,
+  rate: 1000,
+  limit: 5,
+  generate: {
+    bindto: "#chart",
+    data: {
+      colors: {'Temperature': "red"},
+      type: "line"
+    },
+    transition: {
+      duration: 1000
+    },
+    axis: {
+      x: {
+        label: {
+          text: 'TIME',
+          position: 'center',
+         
+        },
+      },
+      y: {
+        label: {
+          text: 'CELSI',
+          position: 'outer-middle'
+        },
+        
+      },
+    },
+    grid: {
+      x: {
+        show: true 
+      },
+      y: {
+        show: true 
+      }
+    },
+    tooltip: {
+     show: true
+    },
+    point: {
+      show: true
+    }
+  },
+  limit: 30,
+transform: function(m) {
+  return { eon: {
+      
+      Temperature: m.temperature,
+      Fahrenheit: m.fahrenheit,
+      Kelvin: m.kelvin
+      // temperature: m.temperature
+    }}
+  }
+});
+
+    //   const button = document.getElementById('publish-button');
+
+    //   button.addEventListener('click', () => {
+    //     pubnub.publish({
+    //       channel : "pubnub_onboarding_channel",
+    //       message : {"sender": uuid, "content": "hehe id did it"}
+    //     }, function(status, response) {
+    //       //Handle error here
+    //     });
+    //   });
+
+
+      __eon_pubnub.addListener({
+
+        message: function(event) {
+          let pElement = document.createElement('h3');
+          pElement.appendChild(document.createTextNode(event.message.temperature + 'C°'));
+          pElement.appendChild(document.createTextNode(event.message.kelvin + 'K'));
+          document.body.appendChild(pElement);
+        },
+    });
+    
+
+
+    //     presence: function(event) {
+    //       let pElement = document.createElement('p');
+    //       pElement.appendChild(document.createTextNode(event.uuid + " has joined. That's you!"));
+    //       document.body.appendChild(pElement);
+    //     }
+
+
+    //   pubnub.history(
+    //     {
+    //       channel: 'pubnub_onboarding_channel',
+    //       count: 10,
+    //       stringifiedTimeToken: true,
+    //     },
+    // function (status, response) {
+    // //   let pElement = document.createElement('h1');
+    // //   pElement.appendChild(document.createTextNode('DATA:'));
+    // //   document.body.appendChild(pElement);
+
+    // //   pElement = document.createElement('h1');
+    //   let msgs = response.messages;
+    //   for (let i in msgs) {
+    //     msg = msgs[i];
+    //     let pElement = document.createElement('h1');
+    //     pElement.appendChild(document.createTextNode('sender: ' + msg.entry.sender + ', content: ' + msg.entry.content));
+    //     document.body.appendChild(pElement);
+    //   }
+    // }
+    //   );
+    const setBg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  color.innerHTML = "#" + randomColor;
+}
+
+genNew.addEventListener("onload", setBg);
+setBg();
+  </script>
+</body>
+
+</html>
