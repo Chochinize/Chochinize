@@ -132,15 +132,15 @@ transform: function(m) {
     //   });
 
 
-      __eon_pubnub.addListener({
+    //   __eon_pubnub.addListener({
 
-        message: function(event) {
-          let pElement = document.createElement('h3');
-          pElement.appendChild(document.createTextNode(event.message.temperature + 'C°'));
-          pElement.appendChild(document.createTextNode(event.message.kelvin + 'K'));
-          document.body.appendChild(pElement);
-        },
-    });
+    //     message: function(event) {
+    //       let pElement = document.createElement('h3');
+    //       pElement.appendChild(document.createTextNode(event.message.temperature + 'C°'));
+    //       pElement.appendChild(document.createTextNode(event.message.kelvin + 'K'));
+    //       document.body.appendChild(pElement);
+    //     },
+    // });
     
 
 
