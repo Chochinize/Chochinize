@@ -3,12 +3,13 @@
 
 <head>
   <title>Publish Subscribe Tutorial</title>
-  <script src="/node_modules/pubnub/dist/web/pubnub.js"></script>
+  <script src="../node_modules/pubnub/dist/web/pubnub.js"></script>
   <script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
   <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css" />
+  <link rel="stylesheet" href="styles.css">
   <style type="text/css">
   
-    * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    /* * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
     body {
         font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Roboto Light', 'Segoe UI Web Light', 'Segoe UI Light', 'Segoe UI Web Regular', 'Segoe UI', Helvetica, Arial, sans-serif; 
         margin: 1em;
@@ -22,19 +23,19 @@
     
     .temp {
       position: relative;
-      width: 800px;
+      width: 1000px;
     }
     .temp h1 {
       display: flex;
     }
     #chart .c3-line-type {
   stroke-width: 15px;
-}
+} */
     </style>
 </head>
 <body>
-  <div class="temp">
-    <h1>Arduino live temperature data</h1>
+  <div class="w-42 my-10 mx-10 pt-10 bg-blue-100 rounded-2xl">
+    <h1 class="flex justify-center pb-10 ">Arduino live temperature data</h1>
     <div id="chart"></div>
   </div>
   
@@ -59,7 +60,7 @@
 //     console.log(presenceEvent);
 //   }
 // })
-var __eon_cols = ["Austin","New York","San Francisco","Portland"]; 
+// var __eon_cols = ["Austin","New York","San Francisco","Portland"]; 
 var __eon_labels = {}; 
 chart = eon.chart({
   pubnub: __eon_pubnub,
@@ -108,7 +109,7 @@ chart = eon.chart({
       show: true
     }
   },
-  limit: 30,
+  limit: 40,
 transform: function(m) {
   return { eon: {
       
@@ -178,8 +179,8 @@ transform: function(m) {
   color.innerHTML = "#" + randomColor;
 }
 
-genNew.addEventListener("onload", setBg);
-setBg();
+// genNew.addEventListener("onload", setBg);
+// setBg();
   </script>
 </body>
 

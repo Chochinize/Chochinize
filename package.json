@@ -9,12 +9,16 @@
     "pubnub": "^4.29.11"
   },
   "scripts": {
-    "start": "node src/server/local.js"
+    "start": "node src/server/local.js",
+    "build-css": "tailwindcss build src/styles.css -o styles.css"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "johnny-five": "^2.0.0"
+    "autoprefixer": "^10.2.5",
+    "johnny-five": "^2.0.0",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.4"
   },
   "keywords": [],
   "description": ""
