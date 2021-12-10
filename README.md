@@ -1,9 +1,9 @@
 ## Hi there I'm Martin A.k.a  MG , padawan at DCI . I'm on my jorney to become a Jedi Grand-Master Developer   ♾️
  
 * >✔ :fire:   I'm using the force to obtain 💥a full control of the latest☮️ web  technology <br>
-* >✔   💯 Contribute to the  humanity  through  🌀 technology :fire: <br>
-* >✔ 💣  2021 Goals : Finish the DCI :zap:  succesfully and step further in my Training☀️
-* >✔ ♍ `
+* >✔   💯 Contribute to the  humanity  through  🌀 technologies :fire: <br>
+* >✔ 💣  2021 Goals : Finish the DCI :zap:  -  DONE ☀️
+* >✔ ♍ 
 
 
 
