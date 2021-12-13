@@ -2,7 +2,7 @@
  
  ✔ :fire:   I'm using the force to obtain 💥a full control of the latest☮️ web  technology <br>
  ✔   💯 Contribute to the  humanity  through  🌀 technologies :fire: <br>
- ✔ 💣  2021 Goals : Finish the DCI :zap:  -  DONE ☀️
+ ✔ 💣  2021 Goals : Finish the DCI :zap:  -  DONE ☀️ <br>
  ✔ ♍ 
 
 
