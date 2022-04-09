@@ -15,5 +15,5 @@
 <!-- <a href="https://www.facebook.com/MartinGrayAleksiev"><img align="right" style="background-color: red;" alt="cho" width="50px" src="https://cdn.jsdelivr.net/npm/simple-icons@3/icons/facebook.svg"/></a> -->
 
 <br><br><br><br>&nbsp;&nbsp;&nbsp;
-<img src="sine (1).png" width="100%" height="100%">
+
 
