@@ -4,6 +4,7 @@
  ✔   💯 Contribute to the  humanity  through  🌀 technologies :fire: <br>
  ✔ 💣  2021 Goals : Finish the DCI :zap:  -  DONE ☀️ <br>
  ✔ ♍ 
+ ![](http://i.imgur.com/OUkLi.gif)
 
 
 
