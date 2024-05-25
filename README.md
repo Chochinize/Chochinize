@@ -6,7 +6,7 @@
  -   Constantly exploring and learning new technologies :trophy: <br/>
  -   I'm currently learning react-native :hearts: <br>
  -   I like to play with graphics 📊  and statistics 📈 ☀️ :thought_balloon: <br>
- -   :eyes: If you have something interesting that you want to discuss with me send me an  [:email: HERE](https://portfolio-five-flax-33.vercel.app/contact) 
+ -   :eyes: If you have something interesting that you want to discuss with me send me an  [:email: HERE](https://martinaleksiev.eu) 
  <p align="center">
  <img src='https://user-images.githubusercontent.com/61114795/172156061-fc82e8df-d1dd-4de9-bc50-7f6aae48e018.gif' width="500" height="500"/>
 </p>   
